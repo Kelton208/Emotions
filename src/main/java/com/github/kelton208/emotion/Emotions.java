@@ -37,7 +37,7 @@ public final class Emotions extends JavaPlugin {
             @EventHandler
             public void onChat(AsyncPlayerChatEvent e) {
                 emotes_chat.forEach((k, v) -> {
-                    UseEmoteEvent event = new UseEmoteEvent(EmoteType.RIGHT_CLICK, new ItemStack(Material.AIR), e.getMessage(), v, e.getPlayer());
+                    UseEmoteEvent event = new UseEmoteEvent(EmoteType.CHAT, new ItemStack(Material.AIR), e.getMessage(), v, e.getPlayer());
                     Bukkit.getServer().getPluginManager().callEvent(event);
                     if(e.getMessage().equals(k) && !event.isCancelled()) v.show(e.getPlayer());
                 });

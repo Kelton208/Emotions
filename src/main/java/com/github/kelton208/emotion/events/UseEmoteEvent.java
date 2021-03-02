@@ -15,13 +15,15 @@ public class UseEmoteEvent extends Event implements Cancellable {
     private final ItemStack stack;
     private final String chat;
     private final Emotion<Entity> emotion;
+    private final Entity entity;
     private boolean cancelled;
 
-    public UseEmoteEvent(EmoteType type, ItemStack stack, String chat, Emotion<Entity> emote) {
+    public UseEmoteEvent(EmoteType type, ItemStack stack, String chat, Emotion<Entity> emote, Entity en) {
         this.type = type;
         this.stack = stack;
         this.chat = chat;
         this.emotion = emote;
+        this.entity = en;
     }
 
     public EmoteType getType() {
@@ -38,6 +40,10 @@ public class UseEmoteEvent extends Event implements Cancellable {
 
     public Emotion<Entity> getEmotion() {
         return this.emotion;
+    }
+
+    public Entity getEntity() {
+        return this.entity;
     }
 
     @Override

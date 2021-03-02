@@ -28,7 +28,7 @@ public final class Emotions extends JavaPlugin {
                 if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
                     emotions_cl.forEach((k, v) -> {
                         if(e.getItem() == null) return;
-                        UseEmoteEvent event = new UseEmoteEvent(EmoteType.RIGHT_CLICK, e.getItem(), "", v);
+                        UseEmoteEvent event = new UseEmoteEvent(EmoteType.RIGHT_CLICK, e.getItem(), "", v, e.getPlayer());
                         Bukkit.getServer().getPluginManager().callEvent(event);
                         if (e.getItem().isSimilar(k) && !event.isCancelled()) v.show(e.getPlayer());
                     });
@@ -37,7 +37,7 @@ public final class Emotions extends JavaPlugin {
             @EventHandler
             public void onChat(AsyncPlayerChatEvent e) {
                 emotes_chat.forEach((k, v) -> {
-                    UseEmoteEvent event = new UseEmoteEvent(EmoteType.RIGHT_CLICK, new ItemStack(Material.AIR), e.getMessage(), v);
+                    UseEmoteEvent event = new UseEmoteEvent(EmoteType.RIGHT_CLICK, new ItemStack(Material.AIR), e.getMessage(), v, e.getPlayer());
                     Bukkit.getServer().getPluginManager().callEvent(event);
                     if(e.getMessage().equals(k) && !event.isCancelled()) v.show(e.getPlayer());
                 });

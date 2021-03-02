@@ -6,7 +6,7 @@
 
     <groupId>com.github.kelton208</groupId>
     <artifactId>Emotion</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>Emotion</name>
@@ -60,6 +60,10 @@
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>local-repo</id>
+            <url>file://C:\Users\dark0\Desktop\Files\CodingProjects\repositories</url>
         </repository>
     </repositories>
 

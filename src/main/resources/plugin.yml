@@ -1,0 +1,4 @@
+name: Emotions
+version: ${project.version}
+main: com.github.kelton208.emotion.Emotions
+api-version: 1.16
